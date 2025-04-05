@@ -13,6 +13,7 @@ export class UserDetailsPage {
   private userPhoneNo: Locator;
   private savePersonalDetails: Locator;
   //
+  private birthNameCheck: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -34,18 +35,34 @@ export class UserDetailsPage {
       name: "Sauvegarder et Continuer",
     });
 
+    this.birthNameCheck = this.page.locator(
+      '//input[contains(@id,"birthNameCheck")]'
+    );
+
     //
     this.successMessage = this.page.locator("");
   }
 
   async fillUserPersonalDetails() {
     await this.userTitle.click();
+    await this.page.waitForTimeout(3000);
     await this.userFirstName.fill("Martin");
+    await this.page.waitForTimeout(3000);
     await this.userLastName.fill("Franc");
+    await this.page.waitForTimeout(3000);
+    await this.userDOB.fill("11112000");
+    await this.page.waitForTimeout(3000);
     await this.userEmail.fill("martin@franc.com");
+    await this.page.waitForTimeout(3000);
     await this.userPhoneNo.fill("0612345678");
+    await this.page.waitForTimeout(3000);
+    await this.userTitle.click();
+    //
     await this.savePersonalDetails.click();
   }
 
-  async verifyCardissuedStatus() {}
+  async vosInformationsPersonelles() {
+    //
+    await this.birthNameCheck.check();
+  }
 }
