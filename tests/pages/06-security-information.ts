@@ -36,6 +36,7 @@ export class SecurityInformationPage {
 
   async fillSecurityInformation() {
     //
+    await this.closePage.click()
     //
   }
 }

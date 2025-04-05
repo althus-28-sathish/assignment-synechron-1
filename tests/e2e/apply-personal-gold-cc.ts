@@ -1,13 +1,13 @@
 import { test, expect } from "../fixtures/fixture.ts";
+import data from "../support/data-json.json";
 
-test.describe("Buy a Personal CC", async () => {
+test.describe("Buy a Gold AE Card", async () => {
   //
   test.beforeEach(async ({ page }) => {
     await page.goto("https://www.americanexpress.com/fr-fr/?inav=NavLogo");
   });
 
-  // data supplied via JSON
-  test("JSON Data", async ({
+  test("sample", async ({
     page,
     homePage,
     contactInformationPage,
@@ -26,6 +26,19 @@ test.describe("Buy a Personal CC", async () => {
     await successPage.closeApplication();
   });
 
+  // data supplied via JSON
+  test("JSON Data", async ({
+    page,
+    homePage,
+    contactInformationPage,
+    personalInformationPage,
+    finacialInformationPage,
+    securityInformationPage,
+    successPage,
+  }) => {
+    //  to implement
+  });
+
   test("FAKER Data", async ({
     page,
     homePage,
@@ -34,7 +47,9 @@ test.describe("Buy a Personal CC", async () => {
     finacialInformationPage,
     securityInformationPage,
     successPage,
-  }) => {});
+  }) => {
+    // to implement
+  });
 
   // data supplied via CSV
   test("using CSV", async ({
@@ -45,5 +60,7 @@ test.describe("Buy a Personal CC", async () => {
     finacialInformationPage,
     securityInformationPage,
     successPage,
-  }) => {});
+  }) => {
+    // to implement
+  });
 });

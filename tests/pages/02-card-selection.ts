@@ -2,21 +2,17 @@ import { Page, Locator } from "@playwright/test";
 
 export class CardSelectionPage {
   private page: Page;
-  private carteGoldAmericanExpress: Locator;
-  private demandezVotreCarte: Locator;
+  private aeGoldCard: Locator;
+  private applyCard: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.carteGoldAmericanExpress = this.page
-      .getByRole("link", { name: "En savoir plus" })
-      .nth(1);
-    this.demandezVotreCarte = this.page
-      .locator("#pdp-side-railwrapper")
-      .getByRole("link", { name: "Demandez votre Carte" });
+    this.aeGoldCard = this.page.getByRole("link", { name: "En savoir plus" }).nth(1);
+    this.applyCard = this.page.getByRole("link", { name: "Demandez votre Carte" }).first();
   }
 
   async selectCardType() {
-    await this.carteGoldAmericanExpress.click();
-    await this.demandezVotreCarte.click();
+    await this.aeGoldCard.click();
+    await this.applyCard.click();
   }
 }
