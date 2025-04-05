@@ -1,5 +1,4 @@
 import { test, expect } from "../fixtures/fixture.ts";
-import data from "../support/data-json.json";
 
 test.describe("Buy a Gold AE Card", async () => {
   //
@@ -7,15 +6,7 @@ test.describe("Buy a Gold AE Card", async () => {
     await page.goto("https://www.americanexpress.com/fr-fr/?inav=NavLogo");
   });
 
-  test("sample", async ({
-    page,
-    homePage,
-    contactInformationPage,
-    personalInformationPage,
-    finacialInformationPage,
-    securityInformationPage,
-    successPage,
-  }) => {
+  test(`sample`, async ({page,homePage, contactInformationPage, personalInformationPage,finacialInformationPage,securityInformationPage,successPage}) => {
     //
     await homePage.selectCardType();
     await contactInformationPage.fillContactInformation();
