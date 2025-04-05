@@ -14,6 +14,20 @@ export class UserDetailsPage {
   private savePersonalDetails: Locator;
   //
   private birthNameCheck: Locator;
+  private nomDeNaissance: Locator;
+  private lieuDeNaissance: Locator;
+  private departementDeNaissance: Locator;
+  private paysDeNaissance: Locator;
+  private nationality: Locator;
+  private paysOuTerritories: Locator;
+  private address: Locator;
+  private postalCode: Locator;
+  private village: Locator;
+  private residentialStatus: Locator;
+  private saveAndContinue: Locator;
+  //
+  //
+  private successMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -45,17 +59,11 @@ export class UserDetailsPage {
 
   async fillUserPersonalDetails() {
     await this.userTitle.click();
-    await this.page.waitForTimeout(3000);
     await this.userFirstName.fill("Martin");
-    await this.page.waitForTimeout(3000);
     await this.userLastName.fill("Franc");
-    await this.page.waitForTimeout(3000);
     await this.userDOB.fill("11112000");
-    await this.page.waitForTimeout(3000);
     await this.userEmail.fill("martin@franc.com");
-    await this.page.waitForTimeout(3000);
     await this.userPhoneNo.fill("0612345678");
-    await this.page.waitForTimeout(3000);
     await this.userTitle.click();
     //
     await this.savePersonalDetails.click();
@@ -64,5 +72,10 @@ export class UserDetailsPage {
   async vosInformationsPersonelles() {
     //
     await this.birthNameCheck.check();
+  }
+
+  async validateSuccessMessage() {
+    //
+    await this.successMessage.isVisible();
   }
 }

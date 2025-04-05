@@ -1,7 +1,38 @@
 {
-    "title":"M.",
-    "firstName":"Martin",
-    "lastName":"Franc",
-    "dob":"11112000",
+    "personal":
+    {
+        "title":"M.",
+        "firstName":"Martin",
+        "lastName":"Franc",
+        "dob":"11112000",
+        "phone":"0612345678"
+    }
+    
+    "vosInfo":
+    {
+        "nomDe":"yes",
+        "lieuDe":"Lieu De",
+        "department":"01",
+        "paysDe":"France",
+        "nationality":"France",
+        "paysOu":"metro",
+        "street":"address",
+        "postalcode":"12345",
+        "ville":"village",
+        "status":"resident"
+    }
+    "banking":
+    {
+        "iban":"FR1420041010050500013M02606",
+        "swift":"EBATFRPPEB1",
+        "bancaire":"1-3",
+        "income":"11111",
+        "euros":"100000",
+        "socio":"retariete",
+        "profession":
+
+
+    }
+
 
 }

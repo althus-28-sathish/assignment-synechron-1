@@ -65,6 +65,4 @@ test("test", async ({ page }) => {
   await page
     .getByRole("textbox", { name: "Confirmez votre code PIN" })
     .fill("1234");
-  await page.goto("https://www.americanexpress.com/fr-fr/");
-  await page.goto("https://www.americanexpress.com/fr-fr/");
 });
