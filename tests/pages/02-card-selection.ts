@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 
-export class PersonalCardsPage {
+export class CardSelectionPage {
   private page: Page;
   private carteGoldAmericanExpress: Locator;
   private demandezVotreCarte: Locator;

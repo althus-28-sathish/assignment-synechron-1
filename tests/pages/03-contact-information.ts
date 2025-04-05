@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 
-export class UserDetailsPage {
+export class ContactInformationPage {
   private page: Page;
   private carteGoldAmericanExpress: Locator;
   private successMessage: Locator;
@@ -26,8 +26,6 @@ export class UserDetailsPage {
   private residentialStatus: Locator;
   private saveAndContinue: Locator;
   //
-  //
-  private successMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -57,7 +55,7 @@ export class UserDetailsPage {
     this.successMessage = this.page.locator("");
   }
 
-  async fillUserPersonalDetails() {
+  async fillContactInformation() {
     await this.userTitle.click();
     await this.userFirstName.fill("Martin");
     await this.userLastName.fill("Franc");
@@ -67,15 +65,5 @@ export class UserDetailsPage {
     await this.userTitle.click();
     //
     await this.savePersonalDetails.click();
-  }
-
-  async vosInformationsPersonelles() {
-    //
-    await this.birthNameCheck.check();
-  }
-
-  async validateSuccessMessage() {
-    //
-    await this.successMessage.isVisible();
   }
 }
