@@ -25,7 +25,7 @@ export class SecurityInformationPage {
     this.subscribeSmsNo = this.page.locator("");
     this.submitButton = this.page.locator("");
     //
-    this.closePage = this.page.getByRole("button", { name: "Fermez la Page" });
+    this.closePage = this.page.getByRole("button", { name: "Soumettre" });
   }
 
   async fillSecurityInformation() {

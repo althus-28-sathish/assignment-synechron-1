@@ -13,16 +13,25 @@ export class PersonalInformationPage {
   private addressPostalCode:Locator;
   private addressTown:Locator;
   private addressResidentialStatus:Locator;
-  private saveAndContinue:Locator;
   //
+  private saveAndContinue:Locator;
 
   constructor(page: Page) {
     this.page = page;
     //
     this.birthName = this.page.getByRole('textbox',{name:'Nom de naissance'});
     this.placeOfBirth = this.page.getByRole('textbox',{name:'Lieu de naissance'});
-    this.departmenOfBirth = this.page.getByRole('combobox',{name:'Département de naissance'});
-    this.countryOfBirth = this.page.getByRole('combobox',{name:'Pays de naissance'});
+    this.departmenOfBirth = this.page.getByRole('listbox',{name:'Département de naissance'});
+    this.countryOfBirth = this.page.getByRole('listbox',{name:'Pays de naissance'});
+    this.nationality = this.page.getByRole('listbox',{name:'Nationalité (Pays)'});
+    this.addressTeritory = this.page.getByRole('listbox',{name:'Pays ou Territoires'});
+    this.addressStreet = this.page.getByRole('textbox',{name:'N°, type et nom de la voie de votre résidence principale'});
+    this.addressPostalCode = this.page.getByRole('textbox',{name:'Code postal'});
+    this.addressTown = this.page.getByRole('textbox',{name:'Ville'});
+    this.addressResidentialStatus =  this.page.getByRole('listbox',{name:'Statut résidentiel'});
+    //
+    this.saveAndContinue=this.page.getByRole('button',{name:'Sauvegarder et Continuer'});
+
   }
 
   async fillPersonalDetails() {

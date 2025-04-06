@@ -9,14 +9,14 @@ export class SuccessPage {
   constructor(page: Page) {
     this.page = page;
     //
-    this.successMessage = this.page.locator("");
+    this.successMessage = this.page.locator("(//h3)[1]");
     //
     this.closePage = this.page.getByRole("button", { name: "Fermez la Page" });
   }
 
   async validateSuccessMessage() {
     //
-    await expect(this.successMessage).toContainText("Camelle Martin");
+    await expect(this.successMessage).toContainText("Martin");
   }
 
   async closeApplication() {

@@ -12,8 +12,7 @@ export class HomePage {
   }
 
   async selectCardType() {
-    await this.page.waitForTimeout(5000);
-    await this.alert.click();
+    await this.alert.click({timeout:5000});
     await this.specialCards.click();
   }
 }

@@ -12,11 +12,21 @@ export class FinancialInformationPage {
   private socio: Locator;
   private profession: Locator;
   //
-  private saveFinancialInformation: Locator;
+  private saveAndContinue: Locator;
 
   constructor(page: Page) {
     this.page = page;
     //
+    this.iban=this.page.getByRole("textbox", { name: "IBAN" });
+    this.swiftCode=this.page.getByRole("textbox", { name: "Code BIC / SWIFT" });
+    this.seniority = this.page.getByLabel("Votre ancienneté bancaire");
+    this.income = this.page.getByRole("textbox", { name: "Montant de votre principale" });
+    this.otherSourceNo = this.page.getByRole("textbox", { name: "Montant de votre principale" });
+    this.estimate=this.page.getByLabel("Estimation de votre");
+    this.socio = this.page.getByLabel("Catégorie socio-");
+    this.profession=this.page.getByLabel("Votre profession");
+    //
+    this.saveAndContinue = this.page.getByRole("button", { name: "Sauvegarder et Continuer", });
   }
 
   async fillFinancialInformation() {
@@ -27,9 +37,9 @@ export class FinancialInformationPage {
     await this.income.fill("11111");
     await this.otherSourceNo.check();
     await this.estimate.selectOption({index:3});
-    await this.socio.selectOption({index:2});
-    await this.profession.selectOption({index:3});
+    await this.socio.selectOption({index:7});
+    await this.profession.selectOption({index:2});
     //
-    await this.saveFinancialInformation.click();
+    await this.saveAndContinue.click();
   }
 }
